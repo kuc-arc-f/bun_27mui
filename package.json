@@ -1,0 +1,39 @@
+{
+  "name": "bun_27",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon",
+    "dev:test": "rsbuild dev --open",
+    "build": "rsbuild build && bun run build:server",
+    "build:server": "bun build --target=node --minify src/index.ts --outfile dist/index.js",
+    "build:serverTest": "bun rsbuild build --config custom.config.ts",
+    "build:test": "",
+    "clean": "rimraf dist",
+    "preview:test": "rsbuild preview",
+    "start": "bun run dist/index.js"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.0",
+    "@mui/material": "^6.1.0",
+    "axios": "^1.7.5",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.0.1",
+    "@rsbuild/plugin-react": "^1.0.1",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "nodemon": "^3.1.4",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.2"
+  }
+}
